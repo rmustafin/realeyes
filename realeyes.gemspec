@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["rommel.rmm@gmail.com"]
   spec.summary       = %q{Ruby client for realeyes reporting api}
   spec.description   = %q{}
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/rmustafin/realeyes"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
