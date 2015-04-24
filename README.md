@@ -22,10 +22,10 @@ Or install it yourself as:
 
 Initialization
 
-    conn = Realeyes::Connection.new(access_token: 'token', secret_key: 'key')
+    conn = Realeyes::Connection.new(access_key: 'access', secret_key: 'secret')
 
     # or set custom base url, by default it's 'http://reportingapi.realeyesit.com/api/v1/'
-    conn = Realeyes::Connection.new(:access_token 'token', secret_key: 'key', base_url: 'http://...')
+    conn = Realeyes::Connection.new(access_key: 'access', secret_key: 'secret', base_url: 'http://...')
 
 Get methods
 
