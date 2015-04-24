@@ -1,6 +1,6 @@
 # Realeyes
 
-TODO: Write a gem description
+Unofficial Realeyes Data Api Client for Ruby
 
 ## Installation
 
@@ -20,7 +20,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Initialization
+
+    conn = Realeyes::Connection.new(access_token: 'token', secret_key: 'key')
+
+    # or set custom base url, by default it's 'http://reportingapi.realeyesit.com/api/v1/'
+    conn = Realeyes::Connection.new(:access_token 'token', secret_key: 'key', base_url: 'http://...')
+
+Get methods
+
+    conn.get('GetStudies')       # => Net::HTTPOK Object
+    conn.get('GetStudies').code  # => 200
+    conn.get('GetStudies').body  # => '[{"Id": 1,"Name":"My Study"}, ...]'
+
+    # add params hash as second parameter
+    conn.get('GetMediaByYouTubeHash', {YouTubeUrlHash: 'nXRJqNSoL9'})
+
+Post methods
+
+    # post(method, body, params)
+    conn.post('UpdateCollection', {Name: 'New Name'}, {UrlHash: 'nXRJqNSoL9'})
+
+## Todo
+
+1. Add services and response objects ( Media.find_by_hash('nXRJqNSoL9').update(name: 'New Name') )
 
 ## Contributing
 
