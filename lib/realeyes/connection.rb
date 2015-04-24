@@ -10,7 +10,7 @@ module Realeyes
     def initialize(config)
       config[:base_url] ||= "http://reportingapi.realeyesit.com/api/v1/"
       config[:signature_lifetime] ||= 60
-      @config = config.symbolize_keys
+      @config = config
     end
 
     def get api_method, params={}
@@ -24,7 +24,7 @@ module Realeyes
       Net::HTTP.new(uri.host, uri.port).request(request)
     end
 
-    def request_uri http_method, api_method, params
+    def request_uri http_method, api_method, params={}
       uri = URI.parse(config[:base_url] + api_method)
       uri.query = URI.encode_www_form(params.merge(additional_params).to_a)
       URI.parse "#{uri.to_s}&Signature=#{signature(http_method, uri.to_s)}"
