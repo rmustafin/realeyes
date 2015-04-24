@@ -1,6 +1,6 @@
 # Realeyes
 
-Unofficial Realeyes Data Api Client for Ruby
+Unofficial [Realeyes](http://www.realeyesit.com/) Data Api Client for Ruby
 
 ## Installation
 
